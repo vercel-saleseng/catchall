@@ -10,7 +10,7 @@ export const getCachedData = async (route?: string[]) => {
 	const tags = !route ? undefined : route[0] in cacheTagCategories ? [route[0]] : undefined;
 
 	// Technology & AI should be revalidated every 30 seconds
-	const revalidate = route[0] in cacheTagCategories ? undefined : 30;
+	const revalidate = route[0] in cacheTagCategories ? undefined : 5;
 
 	const fn = cache(async () => getFragment(route), undefined, { revalidate, tags });
 	return fn();
