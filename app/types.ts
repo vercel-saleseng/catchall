@@ -20,10 +20,12 @@ export type CategoryData = {
 
 export type Fragment =
 	| {
+			ts: number;
 			data: CategoryData;
 			templateType: 'list';
 	  }
 	| {
+			ts: number;
 			article: TArticle;
 			categorySlug: string;
 			templateType: 'article';
